@@ -1,0 +1,21 @@
+/* COEDE FOR LOGIN PAGE */
+
+/* Tablets & Moblies */
+@media (min-width: 320px) and (max-width: 991px) {
+  .intro {
+    display: none;
+  }
+  .welcome{
+    height: inherit;
+  }
+  .login{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 80vw;
+    border-radius: 10px;
+  }
+
+}

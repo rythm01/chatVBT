@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Poppins:wght@200;300;400&family=Roboto:wght@500&family=Ubuntu+Condensed&display=swap');
+
+/* initial */
+:root {
+    --primary-color: #4A93D6;
+    --secondry-color: #00e149;
+    --white-color: #fff;
+    --text-color: #b0b0b0;
+    --black-color: #000;
+    --primary-font: 'Poppins', sans-serif;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--primary-font);
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* LOGIN PAGE CSS */
+.wrapper::after {
+    background: url('../Images/bg-2.png');
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height:100vh;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* Center the wrapper */
+.wrapper {
+    margin: 0px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border-top-right-radius: 35px;
+    border-top-left-radius: 35px;
+}
+
+.Welcome {
+    width: 100%;
+    height: 100vh !important;
+}
+
+/* Style for intro column */
+.intro {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+}
+
+/* Style for login column */
+.login {
+    width: 50%;
+    background-color: var(--white-color);
+    padding: 30px 25px 40px;
+    box-sizing: border-box;
+}
+
+.column {
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    width: 100%;
+}
+
+.column select {
+    outline: none;
+    border: none;
+    height: 53px;
+    width: 100%;
+    font-size: 19px;
+    text-align: center;
+}
+
+#form1 {
+    height: 50px;
+    padding: 26px 15px;
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.verify {
+    display: flex;
+    flex-direction: column;
+    margin: 1.25rem;
+}
+
+/* Chrome, Safari, Edge, Opera hide arrows from input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+button[type="submit"] {
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+    border-radius: 40px;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: medium;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out ;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(55, 216, 55);
+    padding: auto;
+    left: 0;
+    width: 150px;
+}
+
+.otp-field {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
