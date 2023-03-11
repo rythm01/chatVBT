@@ -9,10 +9,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use('/', userRoutes);
 
-// app.post('/', express.json(), (req, res) => {
-//     console.log(req.body);
-// })
-
 app.listen(5000, () => {
     console.log("The server is listening on the port 5000");
 });

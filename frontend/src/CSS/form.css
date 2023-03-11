@@ -1,0 +1,69 @@
+.div-center {
+    width: 400px;
+    height: 250px;
+    border-radius: 20px;
+    background-color: lightblue;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: auto;
+    padding: 1em 2em;
+    border-bottom: 2px solid #ccc;
+    display: table;
+}
+.profile_img {
+    border-radius: 100px;
+    width: 80px;
+    margin-bottom: 20px;
+    margin-left: 125px;
+}
+
+.profile_img_register {
+    border-radius: 100px;
+    width: 100px;
+    margin-top: 3px;
+    margin-left: 125px;
+}
+
+.profile_img_profile {
+    border-radius: 100px;
+    width: 100px;
+    margin-top: 9px;
+    margin-left: 163px;
+}
+
+div.content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.btn_profile {
+    margin-left: 175px;
+}
+
+textarea{
+    border-radius: 5px;
+    border: 1px solid rgb(191, 191, 191);
+    margin: auto;
+    width: 100%;
+    height: 76px;
+    /* align-items: center; */
+    text-align: center;
+}
+#fname,
+#lname,
+#email,
+#password,
+#username,
+#mobileno,
+#address {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+input[type="file"] {
+    /* margin-left: 50px; */
+    display: none;
+}

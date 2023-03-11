@@ -9,7 +9,8 @@ const router = express.Router();
 //     res.end(JSON.stringify(str));
 // });
 
-router.post('/', express.json(), (req, res) => {
+router
+ .post('/', express.json(), (req, res) => {
     const num = req.body;
     console.log(num);
     res.send(null);
