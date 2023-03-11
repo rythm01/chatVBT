@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../CSS/form.css";
 import avatar from "../Images/user.jpeg";
-import { Toaster } from "react-hot-toast";
 import { useFormik } from 'formik';
 import convertToBase64 from "../helper/convert";
 
@@ -28,7 +27,6 @@ export default function Form() {
     });
     return (
         <div className="back">
-            <Toaster position="top-center" reverseOrder="false" />
             <form onSubmit={formik.handleSubmit}>
                 <div className="div-center">
                     <div className="content">
