@@ -1,7 +1,7 @@
 /* COEDE FOR LOGIN PAGE */
 
 /* Tablets & Moblies */
-@media (min-width: 320px) and (max-width: 991px) {
+@media (max-width: 991px) {
   .intro {
     display: none;
   }
@@ -15,7 +15,7 @@
     justify-content: center;
     margin: auto;
     width: 80vw;
+    padding: 0px 80px;
     border-radius: 10px;
   }
-
 }
