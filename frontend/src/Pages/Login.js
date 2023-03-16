@@ -10,6 +10,7 @@ import { Select, countryCode } from '../Components/Select';
 const auth = getAuth(app);
 let i = 0;
 let cc = "";
+let phoneNumber;
 
 
 function Login() {
@@ -50,18 +51,9 @@ function Login() {
 
     function handlePhoneNo(e) {
         e.preventDefault();
-        while (countryCode.charAt(i) !== " ") {
-            cc += countryCode.charAt(i);
-            i++;
-        }//bug in init
-        if (num && num.length === 10) {
-            const mobileNumber = {
-                mobNo: num
-            };
-            axios.post('http://localhost:5000/', mobileNumber)
-                .then(() => {
-                    onOtpSend();
-                });
+        //bug in init
+        if (num) {
+            onOtpSend();
         }
         else {
             alert("Please Enter Valid Number!");
@@ -75,14 +67,18 @@ function Login() {
             'callback': (response) => {
                 console.log("You are inside the recaptcha verifiier");
                 // reCAPTCHA solved, allow signInWithPhoneNumber.
-                onOtpSend();
+                // onOtpSend();
             }
         }, auth);
     }
 
     function onOtpSend() {
         reCaptchaVerifier();
-        const phoneNumber = cc + num;
+        while (countryCode.charAt(i) !== " ") {
+            cc += countryCode.charAt(i);
+            i++;
+        }
+        phoneNumber = cc + num;
         const appVerifier = window.recaptchaVerifier;
 
         signInWithPhoneNumber(auth, phoneNumber, appVerifier)
@@ -100,17 +96,24 @@ function Login() {
         const code = enteredOtp;
         window.confirmationResult.confirm(code).then((result) => {
             // User signed in successfully.
-            const user = result.user;
-            console.log(user);
-            //on successful authentication store uid,& token in localStorage api for session management
-            localStorage.setItem('userId', user.uid);
-            localStorage.setItem('accessToken', user.accessToken);
-            console.log(localStorage.getItem('userId'));
+            // const user = result.user;
             alert('Verification Done');
-            Navigate('/profile');
+            const mobileNumber = {
+                phoneNumber: cc + num
+            };
+            axios.post('http://localhost:5000/', mobileNumber)
+                .then((response) => {
+                    localStorage.setItem("token", response.data.token);
+                    //Toast
+                    Navigate('/profile');
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
             // ...
         }).catch((error) => {
             alert('Invalid Otp');
+            setShowVerify(true);
             // User couldn't sign in (bad verification code?)
             // ...
         });

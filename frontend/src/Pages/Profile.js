@@ -5,9 +5,10 @@ import avatar from "../Images/user.jpeg";
 import { useFormik } from 'formik';
 import convertToBase64 from "../helper/convert";
 import toast, { Toaster } from "react-hot-toast";
-import { usernameValidate } from "../helper/Validate";
+// import { usernameValidate } from "../helper/Validate";
+import instance from "../Utils/axios";
 
-export default function Form() {
+export default function Profile() {
 
     const Navigate = useNavigate();
     const [file,setFile] = useState();
@@ -21,13 +22,20 @@ export default function Form() {
             username: "",
             description: ""
         },
-        validate : usernameValidate,
+        // validate : usernameValidate,
         onSubmit: async values => {
             values = await Object.assign(values, { profile: file || "" });
             console.log(values); // store values inside mongoDB;
             // alert("Data has been submmited successfully");
-            toast.success("Data has been submitted successfully")
-            // Navigate('/ChatPage');
+            instance.post('/profile', {
+                name: values.username,
+                description: values.description,
+                profilePhoto: values.profile
+            }, { headers: { Authorization: localStorage.getItem('token')}});
+            toast.success("Data has been submitted successfully");
+            setTimeout(() => {
+                 Navigate('/Chat');
+            }, 3000);
         }
     });
     return (
