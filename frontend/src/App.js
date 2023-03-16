@@ -1,18 +1,19 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Login from './Pages/Login';
-import Form from './Pages/Form';
-import ChatPage from './Pages/ChatPage';
+import Profile from './Pages/Profile';
+import Chat from './Pages/Chat';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Login />}></Route>
-        <Route path='/profile' element={<Form />}></Route>
-        <Route path='/ChatPage' element={<ChatPage />}></Route>
+        <Route path='/' element={<Login />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/chat' element={<Chat />} />
       </Routes>
     </BrowserRouter>
   );
 }
+
 export default App;

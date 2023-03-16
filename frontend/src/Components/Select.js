@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import flags from '../Utils/flags';
-// import countries from '../Utils/countrycodes';
 
 let isselected = false;
 let countryCode;
